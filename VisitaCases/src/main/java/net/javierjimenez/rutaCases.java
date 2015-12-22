@@ -11,18 +11,25 @@ import java.util.Set;
 public class rutaCases {
 
 	/**
-	 * String que conte la ruta a seguir per visitar les cases.
+	 * Set que contindra tots els Strings de cada casa visitada.
 	 */
-	private String ruta;
+	private Set<String> cases = new HashSet<String>();
+
+	/**
+	 * Int que conté la posició x de la casa visitada
+	 */
+	private int x = 0;
+
+	/**
+	 * Int que conté la posició y de la casa visitada
+	 */
+	private int y = 0;
 
 	/**
 	 * Constructor de l'objecte rutaCases.
 	 * 
-	 * @param mapa String que conte la ruta de cases a visitar.
 	 */
-	public rutaCases(String mapa) {
-
-		ruta = mapa;
+	public rutaCases() {
 
 	}
 
@@ -32,12 +39,7 @@ public class rutaCases {
 	 * 
 	 * @return Int que conté el total de cases visitades sense repetir.
 	 */
-	public int rutaMapa() {
-
-		int x = 0;
-		int y = 0;
-
-		Set<String> cases = new HashSet<String>();
+	public int rutaMapa(String ruta) {
 
 		for (int i = 0; i < ruta.length(); i++) {
 

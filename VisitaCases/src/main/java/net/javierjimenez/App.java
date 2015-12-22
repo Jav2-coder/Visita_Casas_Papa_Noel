@@ -28,13 +28,19 @@ public class App {
 
 		try {
 
-			mapa = new BufferedReader(new FileReader(App.class.getResource(RUTA_CASES).getFile()));
+			String rutaMapa;
 
-			String rutaMapa = mapa.readLine();
+			rutaCases RC = new rutaCases();
 
-			rutaCases RC = new rutaCases(rutaMapa);
+			mapa = new BufferedReader(new FileReader(App.class.getResource(
+					RUTA_CASES).getFile()));
 
-			int totalCases = RC.rutaMapa();
+			int totalCases = 0;
+
+			while ((rutaMapa = mapa.readLine()) != null) {
+				
+				totalCases = RC.rutaMapa(rutaMapa);
+			}
 
 			System.out.println("Total cases visitades: " + totalCases);
 
