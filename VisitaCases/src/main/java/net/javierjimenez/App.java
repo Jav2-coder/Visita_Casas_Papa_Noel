@@ -1,8 +1,8 @@
 package net.javierjimenez;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * 
@@ -32,8 +32,8 @@ public class App {
 
 			rutaCases RC = new rutaCases();
 
-			mapa = new BufferedReader(new FileReader(App.class.getResource(
-					RUTA_CASES).getFile()));
+			mapa = new BufferedReader(
+                    new InputStreamReader(App.class.getResource(RUTA_CASES).openStream()));
 
 			int totalCases = 0;
 
